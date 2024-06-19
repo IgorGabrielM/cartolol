@@ -1,0 +1,51 @@
+<div class="w-full h-screen flex md:hidden justify-between">
+    <div class="w-full h-full bg-gray-800">
+        <div class="w-full h-full flex justify-center items-center">
+            <ng-form #form="ngForm" class="w-10/12">
+                <div class="mt-3 flex flex-col gap-2">
+                    <input [(ngModel)]="userLogin.email" class="p-2 rounded-lg bg-gray-600 shadow-lg"
+                        placeholder="Email" labelPlacement="floating" name="email" data-testid="email" required>
+                    <input [(ngModel)]="userLogin.password" class="p-2 rounded-lg bg-gray-600 shadow-lg"
+                        placeholder="Senha" name="password" data-testid="password" required type="password">
+                </div>
+
+                <div class="mt-5 text-white">
+                    <button [disabled]="!form.valid" (click)="form.valid ? onSubmit() : null"
+                        class="bg-gradient-to-r from-[#1d3efc] to-[#c10339] w-full h-10 rounded-lg text-lg font-bold shadow-md text-white"
+                        data-testid="submit">Entrar</button>
+                    <span class="mx-5 text-sm/[10px] text-gray-400">Não possui conta? Crie uma <a
+                            data-testid="link-to-signup" class="text-white font-bold" href="/sign-up">clicando
+                            aqui</a></span>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+</div>
+
+<div class="w-full h-screen hidden md:flex justify-between">
+    <div class="w-2/4 h-full">
+        <div class="w-full h-full flex justify-center items-center dark:bg-gray-800">
+            <ng-form #form="ngForm" class="w-10/12">
+                <div class="mt-3 flex flex-col gap-2">
+                    <input [(ngModel)]="userLogin.email" class="dark:bg-gray-600 shadow-lg p-2 rounded-lg"
+                        placeholder="Email" labelPlacement="floating" name="email" data-testid="email" required>
+                    <input [(ngModel)]="userLogin.password" class="dark:bg-gray-600 shadow-lg p-2 rounded-lg"
+                        placeholder="Senha" name="password" data-testid="password" required type="password">
+                </div>
+
+                <div class="mt-5 text-white">
+                    <button [disabled]="!form.valid" (click)="form.valid ? onSubmit() : null"
+                        class="bg-gradient-to-r from-[#1d3efc] to-[#c10339] w-full h-10 rounded-lg text-lg font-bold shadow-md"
+                        data-testid="submit">Entrar</button>
+                    <span class="mx-5 text-sm/[10px] dark:text-gray-400">Não possui conta? Crie uma <a
+                            data-testid="link-to-signup" class="text-[color:#49586b] dark:text-white font-bold"
+                            href="/sign-up">clicando
+                            aqui</a></span>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+    <div class="w-2/4 h-full bg-gradient-to-b from-[#1d3efc] to-[#c10339] flex justify-center items-center">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/b/bc/CBLOL_logo_2022.png" alt="Logo cblol" class="w-2/3">
+    </div>
+</div>

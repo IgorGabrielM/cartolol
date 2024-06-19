@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cartolol-b86c3": {
+      "hosting": {
+        "cartolol": [
+          "cartolol-b86c3"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cartolol-b86c3"
+  }
+}

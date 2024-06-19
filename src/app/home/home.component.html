@@ -1,0 +1,24 @@
+<div class="w-full h-full min-h-screen dark:bg-gray-800">
+    <div class="w-full flex flex-col justify-center">
+        <span class="dark:text-gray-500 text-xl font-bold text-center">
+            Monte seu time toda semana e ganhe baicoins
+        </span>
+
+        <div class="w-full flex gap-2">
+            <div *ngFor="let team of teams" (click)="selectTeam(team)">
+                <img [src]="team.imageUrl" alt="Imagem do time" class="w-20 h-10">
+            </div>
+            <div (click)="selectTeam()">
+                <i class="ph ph-x-circle"></i>
+            </div>
+        </div>
+
+        <span class="font-bold text-lg text-white">Valor total: {{ countTotalPrice() }}</span>
+    </div>
+
+    <div *ngIf="playersShow" class="w-full h-fit flex flex-col gap-5 justify-center">
+        <app-player-card *ngFor="let player of playersShow" [player]="player"
+            (playerEvent)="handleEvent($event)"></app-player-card>
+    </div>
+
+</div>

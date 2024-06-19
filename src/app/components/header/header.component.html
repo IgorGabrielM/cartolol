@@ -1,0 +1,26 @@
+<div class="w-full dark:bg-gray-800 flex justify-between items-center px-4 py-2 border-b-4 border-gray-500"
+    *ngIf="verifyNotShow()">
+    <div class="relative group w-12 h-12">
+        <img *ngIf="!userLogged || !userLogged.imageUrl"
+            src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"
+            alt="Imagem do usuário" class="w-12 h-12 rounded-lg object-cover object-center">
+        <img *ngIf="userLogged && userLogged.imageUrl" [src]="userLogged.imageUrl" alt="Imagem do usuário"
+            class="w-12 h-12 rounded-lg">
+        <div class="group h-10 bg-transparent"></div>
+        <div (click)="logout()"
+            class="hidden group-hover:flex hover:flex absolute top-16 left-0 w-full h-full justify-center items-center">
+            <div class="bg-red-600 px-4 py-2 rounded">
+                <i class="ph-fill ph-bold ph-sign-out text-white text-2xl"></i>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-3xl font-bold text-purple-500">CartoLOL</h2>
+
+    <div class="px-2 flex gap-2 border-4 border-gray-500 bg-gray-700 rounded-md">
+        <div class="text-white font-bold flex justify-center items-center px-1">
+            <span *ngIf="userLogged">$ {{ userLogged.savings }}</span>
+        </div>
+        <i class="ph ph-coin-vertical text-3xl text-white"></i>
+    </div>
+</div>

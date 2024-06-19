@@ -1,0 +1,20 @@
+<div *ngIf="player"
+    [class]="'w-11/12 p-2 mx-auto rounded-lg shadow-lg bg-gray-700 flex gap-2 cursor-pointer ' + (isSelected ? 'border-4 border-purple-600' : 'border-4 border-gray-700')"
+    (click)="onSelect()">
+    <img [src]="player.imageUrl" alt="Imagem do player" class="w-24 h-32 rounded-lg object-cover object-center z-0">
+    <div class="flex flex-col justify-between">
+        <span class="text-white font-bold text-xl">{{ player.name }}</span>
+        <div class="flex flex-col">
+            <span class="font-bold text-lg text-white">Preço:
+                <span class="text-gray-400 font-base">R${{ player.price.toFixed(2) }}</span>
+            </span>
+            <span class="text-sm" *ngIf="player.priceHistory && (icon && text && color) " [style.color]="color">
+                <span *ngIf="text">{{ text.toFixed(2) }}</span>
+                <i [class]="icon"></i>
+            </span>
+            <span class="font-bold text-white text-lg">Valor:
+                <span class="text-gray-400 text-base">R${{ player.points.toFixed(2) }}</span>
+            </span>
+        </div>
+    </div>
+</div>
